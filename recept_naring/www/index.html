@@ -3,11 +3,38 @@
   <head>
     <title>Titel</title>
     <meta charset="utf-8">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "/js/main.js"></script>
   </head>
   <body>
-    <h1>Hej Då!</h1>
+    <header>
+      <h1>Recept & Näring</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>Hem</li>
+        <li>Kategorier</li>
+        <li>Inspiration</li>
+      </ul>
+      <form id = "search">
+        <input id = "searchField" type = "search" aria-placeholder="Search recipe">
+        <button id = "searchBtn">Search</button>
+
+      </form>
+    </nav>
+    <div id = "content">
+      <div id = "recipes">
+        <h2>Name of recipe</h2>
+
+
+      </div>
+  </div>
+    <footer>
+      <p>&#169;Lycaenion 2018</p>
+      <ul>
+        <li><a href="www.facebook.com"><img id = "facebook" src="/img/facebook.svg"></a></li>
+        <li><a href="www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></li>
+        <li><a href="www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></li>
+        <li><a href="www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></li>
+      </ul>
+    </footer>
   </body>
 </html>
