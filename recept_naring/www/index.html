@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Titel</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
   </head>
   <body>
     <header>
@@ -35,7 +39,28 @@
     </nav>
     <div class = "wrapper">
       <div id = "recipes">
-        <h2>Name of recipe</h2>
+        <h2 id = "recipeName">Name of recipe</h2>
+        <div class = "numOfPortions">
+          <p>Antal portioner:</p>
+          <select id = "portions">
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+          </select>
+        </div>        
+        <ul id = "listOfIngredients">
+          <li>3 Tomato</li>
+          <li>2 Egg</li>
+          <li>1 Onion</li>
+          <li>3 Slices of Bacon</li>
+        </ul>
+        <p id = "execution">Här står det hur man tillagar maträtten!</p>
       </div>
     </div>
     <footer>
