@@ -11,19 +11,31 @@
     <nav>
       <ul>
         <li>Hem</li>
-        <li>Kategorier</li>
+        <li><diV class = "categoryDrop">
+          <button class = "catgoryDropBtn">Kategorier</button>
+          </diV>
+          <div class = "categoryLinks">
+            <a href="#">Laktosfritt</a>
+            <a href="#">Glutenfritt</a>
+            <a href="#">Vegetariskt</a>
+            <a href="#">Veganskt</a>
+            <a href="#">Förrätter</a>
+            <a href="#">Varmrätter</a>
+            <a href="#">Efterrätter</a>
+          </div>
+        </li>
         <li>Inspiration</li>
-        <form id = "search">
+        <li><form id = "search">
             <input id = "searchField" type = "search" aria-placeholder="Search recipe">
             <button id = "searchBtn">Search</button>
           </form>
+        </li>
+        <li><a href="/addRecipe.html">Lägg till recept</a></li>
       </ul>
     </nav>
     <div id = "content">
       <div id = "recipes">
         <h2>Name of recipe</h2>
-
-
       </div>
   </div>
     <footer>
