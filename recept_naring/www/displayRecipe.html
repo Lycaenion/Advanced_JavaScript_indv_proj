@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Recept & Näring</h1>
+    </header>
+    <nav>
+      <ul>
+          <li><a href="/index.html">Hem</a></li>
+        <li><diV class = "categoryDrop">
+          <button class = "catgoryDropBtn">Kategorier</button>
+          </diV>
+          <div class = "categoryLinks">
+            <a href="#">Laktosfritt</a>
+            <a href="#">Glutenfritt</a>
+            <a href="#">Vegetariskt</a>
+            <a href="#">Veganskt</a>
+            <a href="#">Förrätter</a>
+            <a href="#">Varmrätter</a>
+            <a href="#">Efterrätter</a>
+          </div>
+        </li>
+        <li>Inspiration</li>
+        <li><form id = "search">
+            <input id = "searchField" type = "search" aria-placeholder="Search recipe">
+            <button id = "searchBtn">Sök</button>
+          </form>
+        </li>
+        <li><a href="/addRecipe.html">Lägg till recept</a></li>
+      </ul>
+    </nav>
+    <div class = "wrapper">
+      <div id = "recipes">
+        <h2 id = "recipeName">Name of recipe</h2>
+        <div class = "pictures">
+          <img src="/img/pancakes.jpg">
+        </div>
+        <div class="nutritionTable">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo vitae omnis reiciendis id praesentium, voluptate tenetur laboriosam dolores fuga nisi perspiciatis cum mollitia, consequatur blanditiis tempora accusantium! Excepturi, minima officia.</p>
+        </div>
+        <div class = "numOfPortions">
+          <p>Antal portioner:</p>
+          <select id = "portions">
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+          </select>
+        </div>        
+        <ul id = "listOfIngredients">
+          <li>3 Tomato</li>
+          <li>2 Egg</li>
+          <li>1 Onion</li>
+          <li>3 Slices of Bacon</li>
+        </ul>
+        <p id = "execution">Här står det hur man tillagar maträtten!</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&#169;Lycaenion 2018</p>
+      <ul>
+        <li><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></li>
+        <li><a href="https://www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></li>
+        <li><a href="https://www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></li>
+        <li><a href="https://www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
