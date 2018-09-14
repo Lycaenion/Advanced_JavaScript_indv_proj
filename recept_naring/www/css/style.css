@@ -1,0 +1,72 @@
+@font-face{
+    font-family: "tasty-birds";
+    src:url("/fonts/tasty-birds/Tasty_Birds.otf");
+}
+
+body{
+    margin: 0px;
+    font-family: tasty-birds;
+    font-size: 26px;
+}
+
+#categories{
+    list-style: none;
+    padding: 0px;
+    background-color: #ffcbcb;
+    margin: 0px;
+    width: 200px;
+    height: 100vh;  
+    position: fixed;
+    top: 14%;
+}
+
+#categories li{
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+
+#categories li:not(:first-child):hover{
+    background-color: #ffa7a7;
+    font-style: italic;
+}
+
+#categories li:first-child{
+    font-weight: bold;
+}
+
+#categories li a{
+    text-decoration: none;
+    color: black;
+}
+
+.content{
+    margin-left: 200px;
+    margin-top: 300px;
+    padding-left: 30px;
+    background-color: #fff4f4;
+}
+
+nav{
+    margin-left: 0px;
+    background-color: #dffeff;
+    top: 0%;
+    position: fixed;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li{
+    padding: 10px;
+    margin-left: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}

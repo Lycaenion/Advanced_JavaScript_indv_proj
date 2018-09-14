@@ -1,0 +1,9 @@
+<footer>
+        <p>&#169;Lycaenion 2018</p>
+        <ul>
+          <li><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></li>
+          <li><a href="https://www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></li>
+          <li><a href="https://www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></li>
+          <li><a href="https://www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></li>
+        </ul>
+      </footer>
