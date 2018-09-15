@@ -91,11 +91,11 @@ nav ul li a{
     text-decoration: none;
     font-weight: 300;
     font-size: 18px;
-    color: #000000
+    color: #000000;
     display: inline-block;
     box-sizing: border-box;
     border: 0.1em solid #ffffff;
     border-radius: 0.12em;
     padding: 0.35em 1.2em;
     background-color: #ffa7a7;
-    }
+}
