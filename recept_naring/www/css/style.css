@@ -71,9 +71,13 @@ body{
 
 .content{
     margin-left: 200px;
-    margin-top: 300px;
+    margin-top: 70px;
+    top: 200px;
     padding-left: 30px;
+    padding-right: 30px;
     background-color: #fff4f4;
+    border: 1px solid;
+
 }
 
 nav{
@@ -85,6 +89,7 @@ nav{
     height: 70px;
     font-size: 22px;
     font-weight: bold;
+    border: 1px solid;
 }
 
 nav ul{
@@ -121,7 +126,7 @@ nav ul li a{
     
 }
 
-#searchBtn{
+button{
     font-family: tasty-birds;
     text-decoration: none;
     font-size: 20px;
@@ -136,6 +141,7 @@ nav ul li a{
 }
 
 #searchRecipe{
+    border: 1px solid;
     font-size: 20px;
     font-family: tasty-birds;
     border: 3px solid #ffffff;
@@ -144,6 +150,43 @@ nav ul li a{
 }
 
 .searchForm {
+    border: 1px solid;
     display: flex;
     align-items: center;
+}
+
+#recipe:not(select){
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipeName, #amount, #ingredient{
+    width: 200px;
+}
+
+#recipeName{
+    margin-bottom: 20px;
+}
+
+#unit{
+    width: 50px;
+}
+
+h3{
+    border: 1px solid;
+    margin-bottom: 0px;
+    width: 600px;
+}
+
+#tags{
+    border: 1px solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+#submitRecipe, #addIngredient{
+    width: 200px;
 }
