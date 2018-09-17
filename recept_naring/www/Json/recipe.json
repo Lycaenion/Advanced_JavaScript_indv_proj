@@ -1,0 +1,24 @@
+[{
+	"title" : "Pancakes",
+	"Ingredients":[
+		{"name":"Egg"},
+		{"name":"Milk"},
+		{"name":"Flour"},
+		{"name":"Butter"},
+		{"name":"Salt"}
+	],
+	"Execution":"Mix ingredients. Fry in pan"
+},
+
+{
+	"title":"Köttbullar",
+	"Ingredients":[
+		{"name": "Egg"},
+		{"name":"Milk"},
+		{"name":"Flour"},
+		{"name":"Butter"},
+		{"name":"Salt"}
+	],
+
+	"Execution":"Mix ingredients. Fry in pan"
+}]
