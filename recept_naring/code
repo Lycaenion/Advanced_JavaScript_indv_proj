@@ -1,0 +1,32 @@
+<footer>
+        <p>&#169;Lycaenion 2018</p>
+        <ul>
+          <li><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></li>
+          <li><a href="https://www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></li>
+          <li><a href="https://www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></li>
+          <li><a href="https://www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></li>
+        </ul>
+      </footer>
+
+
+      <div id = "addRecipe">
+        <form id = "recipe">
+            <input type = "text" id = "recipeName" placeholder = "Maträtt">
+            <input type="text" id = "amount" placeholder="Mängd">
+            <select type="text" id = "unit" placeholder = "Enhet">
+                <option value = "dl">dl</option>
+                <option value = "ml">ml</option>
+                <option value = "liter">liter</option>
+                <option value = "msk">msk</option>
+                <option value = "krdm">krdm</option>
+                <option value = "cl">cl</option>
+                <option value = "g">g</option>
+                <option value = "kg">kg</option>
+                <option value = "st">st</option>
+            </select>
+            <input type="text" id="ingredient" placeholder="Ingrediens">
+            <button type="button" id="addIngredient">Lägg till ingrediens</button>
+            <textarea name = "Tillagning" type = "text" id ="instruction" placeholder="Tillagning" rows="10"></textarea>
+            <button type="submit" id="submitRecipe">Lägg till</button>
+        </form>
+    </div>
