@@ -1,50 +1,56 @@
-console.log("Hello");
+$.getJSON('/Json/recipes.json', start);
 
+function start(recipes){
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+  console.log(recipes);
 
-$.getJSON('/json/livsmedelsdata.json', start);
+  for(recipe of recipes){
+    
+    let div = $(`<div></div>`);
+    let title = $(`<h1></h1>`);
+    let ul = $(`<ul></ul>`);
+    let ol = $(`<ol></ol>`);
+    
 
+    const ingredients = recipe.ingredients;
+    const executions = recipe.execution;
 
-function start(livsmedelsdata){
-    // Let jQuery create a document fragment
-    // consisting of ul element
-    let ul = $('<ul></ul>');
-    for(let livsmedel of livsmedelsdata){
-      // Create a li tag
-      let li = $('<li></li>');
-      // Add text inside the li element
-      li.text(livsmedel.Namn);
-      // Append the li tag to the ul element
+    title.text(recipe.title);
+
+    for(i of ingredients){
+      let li = $(`<li></li>`);
+      li.text(i.amount + " "+ i.unit + " " + i.name);
       ul.append(li);
     }
-    // Append the ul tag to the body element 
-    $('body').append(ul);
-};
 
-/*
-$.getJSON('/json/people.json', start);
- 
-// Note: Below
-// when calling jQuery like this
-// $('ul') => grab all ul element in the DOM
-// But like this
-// $('<ul></ul>') => create a new ul element,
-// not added in the DOM yet
-function start(people){
-  // Let jQuery create a document fragment
-  // consisting of ul element
-  let ul = $('<ul></ul>');
-  for(let person of people){
-    // Create a li tag
-    let li = $('<li></li>');
-    // Add text inside the li element
-    li.text(person.name);
-    // Append the li tag to the ul element
-    ul.append(li);
+    for(step of executions){
+      let li = $(`<li></li>`);
+      li.text(step);
+
+      console.log(li);
+      ol.append(li);
+    }
+
+
+
+    div.append(title);
+    div.append(ul);
+    div.append(ol);
+
+    $('.content').append(div);
+
   }
-  // Append the ul tag to the body element 
-  $('body').append(ul);
-}*/
+
+    
+  /*
+    for(r of recipe){
+      let h1 = $(`<h1></h1>`);
+
+      h1.text(r.title);
+      
+      div.append(h1);
+    }*/
+  
+
+  
+}
