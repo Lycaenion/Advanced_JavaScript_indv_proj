@@ -1,0 +1,1 @@
+webHandler.displayAllRecipes();
