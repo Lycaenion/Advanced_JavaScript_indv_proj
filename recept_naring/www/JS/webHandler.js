@@ -43,7 +43,18 @@ class webHandler{
         return json;
     }
 
-    static displayAllRecipes(){
-        console.log(this.retrieveRecipes(undefined,"tomato"));
+    static displayRecipes(category, substring){
+        let recipes = this.retrieveRecipes(category, substring);
+
+        
+
+        for(let index in recipes){
+            let div = $(`<div></div>`);
+            let title = $(`<h1></h1>`);
+            title.text(recipes[index].title);
+            div.append(title);
+
+            $('.content').append(div);
+        }
     }
 }
