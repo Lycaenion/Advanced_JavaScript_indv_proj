@@ -44,10 +44,11 @@ class webHandler{
     }
 
     static displayRecipes(category, substring){
+        
         $('.content').empty();
         
         let recipes = this.retrieveRecipes(category, substring); 
-        console.log(category);
+
         for(let index in recipes){
 
             let div = $(`<div id=${category}></div>`);
@@ -57,9 +58,7 @@ class webHandler{
             title.text(recipes[index].title);
             div.append(img);
             div.append(title);
-            
-            
-
+        
             $('.content').append(div);
         }
     }
