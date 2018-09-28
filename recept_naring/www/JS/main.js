@@ -4,14 +4,13 @@ $('#searchBtn').on('click', function(e){
     webHandler.displayRecipes(undefined, substring);
  });
 
-//display all recipes 
-$('#allRecipes').on('click',function(e){
-    webHandler.displayRecipes(undefined, undefined);
-});
-
-
 //display recipes based on category
 $('.categories > li > a').on('click', function(e){
-    console.log(this);
-    webHandler.displayRecipes($(this).attr('id'), undefined);
+    let category = $(this).attr('id');
+
+    if(category === 'allRecipes'){
+        webHandler.displayRecipes(undefined, undefined);
+    }else{
+        webHandler.displayRecipes(category, undefined);
+    }
 });
