@@ -198,3 +198,33 @@ h1{
 p{
     font-size: 18px;
 }
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content > div > img{
+    height: 50%;
+    width: 50%;
+    margin-top: 0px;
+    padding-left: 50px;
+}
+.content > div > p{
+    border: none;
+    margin: 0px;
+    padding-left: 55px;
+    padding-top: 20px;
+    border: 0px;
+}
+
+.content > div{
+    background: #ffa7a7;
+    margin: 25px;
+    border: 1px solid;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

@@ -12,8 +12,8 @@
   <body>
     <nav>
       <ul>
-        <li><a href="/addRecipe.html">Home</a></li>
-        <li><a href="/recipes/">Inspiration</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Inspiration</a></li>
         <li>Recept & Näring</li>
         <li><form class = "searchForm">
           <input id = "searchRecipe" type="search" placeholder="Search Recipe">
@@ -24,14 +24,14 @@
     <div class = "leftMenu">
         <ul class = "categories">
             <li>Categories</li>
-            <li><a href="/recipes.html"> - All Recipes</a></li>
-            <li><a href="#"> - Lactose-free</a></li>
-            <li><a href="#"> - Gluten-free</a></li>
-            <li><a href="#"> - Vegetarian</a></li>
-            <li><a href="#"> - Vegan</a></li>
-            <li><a href="#"> - Appetizers</a></li>
-            <li><a href="#"> - Main Courses</a></li>
-            <li><a href="#"> - Desserts</a></li> 
+            <li><a href="#" id="allRecipes"> - All Recipes</a></li>
+            <li><a href="#" id="lactoseFree"> - Lactose-free</a></li>
+            <li><a href="#" id="glutenFree"> - Gluten-free</a></li>
+            <li><a href="#" id="vegetarian"> - Vegetarian</a></li>
+            <li><a href="#" id="vegan"> - Vegan</a></li>
+            <li><a href="#" id="appetizers"> - Appetizers</a></li>
+            <li><a href="#" id="main"> - Main Courses</a></li>
+            <li><a href="#" id="desserts"> - Desserts</a></li> 
         </ul>
         <div class = "socialMedia">
           <div><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></div>
@@ -41,7 +41,11 @@
         </div>
     </div>
     <div class = "content">
+      <p>About us</p>
     
     </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/JS/webHandler.js"></script> 
+    <script src="/JS/main.js"></script> 
   </body>
 </html>

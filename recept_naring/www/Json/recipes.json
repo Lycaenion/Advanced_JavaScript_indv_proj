@@ -130,7 +130,7 @@
 			"main",
 			"vegetarian"
 		],
-		"imgUrl": "/www/img/roaster-aubergine-tomato-curry.jpg"
+		"imgUrl": "/img/roasted.jpg"
 	},
 	{
 		"title" : "Tiramisu",
@@ -189,6 +189,7 @@
 		"categories" : [
 				 "dessert",
 				 "coffee"
-		]
+		],
+		"imgUrl": "/img/tiramisu.jpg"
 	}
 ]
