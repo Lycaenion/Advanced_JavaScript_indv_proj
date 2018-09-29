@@ -228,3 +228,31 @@ p{
     justify-content: center;
 
 }
+
+.content > #recipe{
+    background:none;
+    border: none;
+    width: 100%;
+
+}
+
+.content > #recipe > h1{
+    float: left;
+    margin: 0px;
+    width: 50%;
+}
+
+.content > #recipe > ul{
+    margin: 0px;
+    width: 200px;
+}
+
+.content > #recipe > img{
+    border: 1px solid;
+
+    left: 900px;
+    height: 30%;
+    width: 30%;
+    margin: 0px;
+    padding: 0px;
+}

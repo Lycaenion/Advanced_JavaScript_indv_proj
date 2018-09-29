@@ -1,0 +1,12 @@
+ "Namn": "Ister gris",
+ "Naringsvarden": {
+      "Naringsvarde": [
+            "Namn": "Energi (kcal)",
+            "Namn": "Protein",
+            "Namn": "Fett",
+            "Namn": "Salt",
+            "Namn": "Summa mättade fettsyror",
+            "Namn": "Summa enkelomättade fettsyror",
+            "Namn": "Summa fleromättade fettsyror"
+      ]
+ }

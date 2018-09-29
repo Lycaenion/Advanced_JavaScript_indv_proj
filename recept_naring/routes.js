@@ -46,8 +46,9 @@ module.exports =  class Routes{
                     if(categoryUndefined){
                         passesCategory = true;
                     }else{
-                        for(let categoryIndex in recipe.categories){
-                            if(req.query["category"] === recipe.categories[categoryIndex]){
+                        for(let categoryIndex in recipe._categories){
+                            if(req.query["category"] === recipe._categories[categoryIndex]){
+                                //console.log(req.query["category"]+ " " + recipe._categories[categoryIndex]);
                                 passesCategory = true; 
                             }
                         }
@@ -55,13 +56,12 @@ module.exports =  class Routes{
                     if(substringUndefined){
                         passesSubstring = true;
                     }else{
-                        let title = recipe.title.toUpperCase();
+                        let title = recipe._title.toUpperCase();
                         let substring = req.query["substring"].toUpperCase();
                         if(title.indexOf(substring) > -1){
                             passesSubstring = true;
                         }
                     } 
-
                     if(passesCategory && passesSubstring){
                         returnedRecipes.push(recipe);
                     }
@@ -69,5 +69,22 @@ module.exports =  class Routes{
                 res.send(returnedRecipes);
             });
         });
+
+        this.app.get('/recipes/:id', (req, res)=>{
+            let allRecipes;
+
+            fs.readFile('www/json/recipes.json', 'utf8', function(err, data){
+                if(err) throw err;
+                allRecipes = JSON.parse(data);
+                let recipe;
+
+                for(let recipeIndex in allRecipes){
+                    if(req.params.id == allRecipes[recipeIndex]._id){
+                        recipe = allRecipes[recipeIndex];
+                    }
+                }
+                res.send(recipe);
+            });
+        })
     }
 }

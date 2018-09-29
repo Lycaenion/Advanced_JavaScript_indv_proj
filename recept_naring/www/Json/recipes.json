@@ -1,8 +1,9 @@
 [
 	{
-		"title" : "Pasta Carbonara",
-		"numOfPpl" : 4,
-		"execution" : [
+		"_id" : 1,
+		"_title" : "Pasta Carbonara",
+		"_recommendedPortions" : 4,
+		"_execution" : [
 			"Put a large saucepan of water on to boil.",
 			"Finely chop the 100g pancetta, having first removed any rind. Finely grate 50g pecorino cheese and 50g parmesan and mix them together.",
 			"Beat the 3 large eggs in a medium bowl and season with a little freshly grated black pepper. Set everything aside.",
@@ -16,7 +17,7 @@
 			"Add extra pasta cooking water to keep it saucy (several tablespoons should do it). You don’t want it wet, just moist. Season with a little salt, if needed.",
 			"Use a long-pronged fork to twist the pasta on to the serving plate or bowl. Serve immediately with a little sprinkling of the remaining cheese and a grating of black pepper. If the dish does get a little dry before serving, splash in some more hot pasta water and the glossy sauciness will be revived."	
 			],
-		"ingredients":[
+		"_ingredients":[
 			{
 				"name": "pancetta",
 				"amount" : 100,
@@ -51,30 +52,25 @@
 				"name" : "unsalted butter",
 				"amount" : 50,
 				"unit" : "g"
-				},
-			{
-				"name" : "salt"
-				},
-			{
-				"name" : "pepper"
 				}
 		],
-		"categories" : [
+		"_categories" : [
 				"main",
 				"pasta",
 				"Italian"
 			],
-		"imgUrl" : "/img/carbonara.jpg"
+		"_imgUrl" : "/img/carbonara.jpg"
 	},
 	{
-		"title" : "Roasted Aubergine & tomato curry",
-		"numOfPpl" : 4,
-		"execution":[
+		"_id" : 2,
+		"_title" : "Roasted Aubergine & tomato curry",
+		"_recommendedPortions" : 4,
+		"_execution":[
 			"Heat oven to 200C/180C fan/gas 6. Toss the aubergines in a roasting tin with 2 tbsp olive oil, season well and spread out. Roast for 20 mins or until dark golden and soft.",
 			"Heat the remaining oil in an ovenproof pan or flameproof casserole dish and cook the onions over a medium heat for 5-6 mins until softening. Stir in the garlic and spices, for a few mins until the spices release their aromas.",
 			"Tip in the tomatoes, coconut milk and roasted aubergines, and bring to a gentle simmer. Simmer for 20-25 mins, removing the lid for the final 5 mins to thicken the sauce. Add a little seasoning if you like, and a pinch of sugar if it needs it. Stir through most of the coriander. Serve over rice or with chapatis, scattering with the remaining coriander."	
 		],
-		"ingredients" : [
+		"_ingredients" : [
 			{
 				"name" : "baby aubergines",
 				"amount" : 600,
@@ -126,16 +122,17 @@
 				"unit" : "pkt"
 			}
 		],
-		"categories":[
+		"_categories":[
 			"main",
 			"vegetarian"
 		],
-		"imgUrl": "/img/roasted.jpg"
+		"_imgUrl": "/img/roasted.jpg"
 	},
 	{
-		"title" : "Tiramisu",
-		"numOfPpl": 6,
-		"execution":[
+		"_id" : 3,
+		"_title" : "Tiramisu",
+		"_recommendedPortions": 6,
+		"_execution":[
 			"Put a 568ml pot double cream, 250g tub mascarpone, 75ml marsala and 5 tbsp golden caster sugar in a large bowl.",
 			"Whisk until the cream and mascarpone have completely combined and have the consistency of thickly whipped cream.",
 			"Pour 300ml strong coffee (made with 2 tbsp coffee granules and 300ml boiling water) into a shallow dish.",
@@ -144,7 +141,7 @@
 			"Cover and chill for a few hours or overnight. This can now be kept in the fridge for up to 2 days.",
 			"To serve, dust with 2 tsp cocoa powder and grate over the remainder of the chocolate."
 		],
-		"ingredients" :[
+		"_ingredients" :[
 			{
 				"name" : "double cream",
 				"amount" : 568,
@@ -186,10 +183,10 @@
 				"unit" : "msk"
 			}
 		],
-		"categories" : [
+		"_categories" : [
 				 "dessert",
 				 "coffee"
 		],
-		"imgUrl": "/img/tiramisu.jpg"
+		"_imgUrl": "/img/tiramisu.jpg"
 	}
 ]
