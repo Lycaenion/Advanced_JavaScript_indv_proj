@@ -28,8 +28,6 @@ class RequestHandler{
             let recipe = Object.assign(new Recipe(), json[index]);  
             recipes.push(recipe);
         }
-        
-        console.log(recipes);
         return recipes;
     }
 
@@ -48,5 +46,55 @@ class RequestHandler{
         })();
         let recipe = Object.assign(new Recipe(), json);
         return recipe;
+    }
+
+    static retrieveIngredient(id){
+        var json;
+        var collectIngredient = (function () {
+            $.ajax({
+                type : "GET",
+                async : false,
+                url: '/ingredients/'+id,
+                dataType: "json",
+                success: function (data) {
+                    json = data;
+                }
+            });
+        })();
+        return json;
+    }
+
+    static retrieveIngredientList(){
+        var json;
+        var collectIngredient = (function () {
+            $.ajax({
+                type : "GET",
+                async : false,
+                url: '/ingredients',
+                dataType: "json",
+                success: function (data) {
+                    json = data;
+                }
+            });
+        })();
+        return json;
+    }
+
+    static addRecipe(recipe){
+        let recipeJson = JSON.stringify(recipe);
+        console.log("we are here");
+        $.ajax({
+            type: "POST",
+            url: '/addRecipe',
+            contentType: "application/json",
+            data: recipeJson,
+            success: function (response) {
+                if (response == 'ok') {
+                    alert('Recipe added');
+                }else{
+                    alert('Something went wrong')
+                }
+            }
+        });
     }
 }

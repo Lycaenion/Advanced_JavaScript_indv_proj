@@ -48,7 +48,6 @@ module.exports =  class Routes{
                     }else{
                         for(let categoryIndex in recipe._categories){
                             if(req.query["category"] === recipe._categories[categoryIndex]){
-                                //console.log(req.query["category"]+ " " + recipe._categories[categoryIndex]);
                                 passesCategory = true; 
                             }
                         }
@@ -71,11 +70,10 @@ module.exports =  class Routes{
         });
 
         this.app.get('/recipes/:id', (req, res)=>{
-            let allRecipes;
 
             fs.readFile('www/json/recipes.json', 'utf8', function(err, data){
                 if(err) throw err;
-                allRecipes = JSON.parse(data);
+                let allRecipes = JSON.parse(data);
                 let recipe;
 
                 for(let recipeIndex in allRecipes){
@@ -86,5 +84,59 @@ module.exports =  class Routes{
                 res.send(recipe);
             });
         })
+
+        this.app.get('/ingredients/:id', (req, res)=>{
+
+            fs.readFile('www/json/ingredients.json', 'utf8', function(err, data){
+                if(err) throw err;
+                let allIngredients = JSON.parse(data);
+                let ingredient;
+                
+                for(let ingredientIndex in allIngredients){
+                    if(req.params.id == allIngredients[ingredientIndex].Nummer){
+                        ingredient = allIngredients[ingredientIndex];
+                    }
+                };
+                res.send(ingredient);
+            });
+        })
+        
+        this.app.get('/ingredients', (req, res)=>{
+
+            fs.readFile('www/json/ingredients.json', 'utf8', function(err, data){
+                if(err) throw err;
+
+                let ingredientList = [];
+                let allIngredients = JSON.parse(data);
+                let substringUndefined = (req.query["substring"] === undefined);
+
+                if(substringUndefined){
+                    for(let index in allIngredients){
+                        ingredientList.push(allIngredients[index].Namn)
+                    } 
+                }else{
+                    for(let index in allIngredients){
+                        let substring = req.query["substring"].toUpperCase();
+                        let ingredientName = allIngredients[index].Namn.toUpperCase();
+                        if(ingredientName.indexOf(substring) > -1){
+
+                            ingredientList.push(allIngredients[index].Namn);
+                        }
+                    }
+                }
+                res.send(ingredientList);
+            });
+        });
+
+        this.app.post('/addRecipe', (req, res)=>{
+            let data = fs.readFileSync('www/json/test.json');
+            let recipes = JSON.parse(data);
+            console.log(recipes.length);
+            req.body._id = recipes.length+1;
+            console.log(req.body);
+            recipes.push(req.body);
+            fs.writeFileSync('www/json/test.json', JSON.stringify(recipes));
+            res.send("ok");
+        });
     }
 }

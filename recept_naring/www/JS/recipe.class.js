@@ -1,4 +1,5 @@
 class Recipe{
+      
     get id(){
         return this._id;
     }
@@ -18,7 +19,7 @@ class Recipe{
         return this._categories;
     }
     get img(){
-        return this._img;
+        return this._imgUrl;
     }
     
 
@@ -41,7 +42,7 @@ class Recipe{
         this._categories = value;
     }
     set img(value){
-        this._img = value;
+        this._imgUrl = value;
     }
 
     

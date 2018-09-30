@@ -6,7 +6,6 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
-    <script src="main.js"></script>
 </head>
 <body>
     <nav>
@@ -43,22 +42,9 @@
         <div id = "addRecipe">
             <h2>Add Recipe:</h2>
             <form id = "recipe">
-                <input type = "text" id = "recipeName" placeholder = "Name of Dish">
-                <input type="text" id = "amount" placeholder="Amount">
-                <select type="text" id = "unit" placeholder = "Unit">
-                    <option value = "dl">dl</option>
-                    <option value = "ml">ml</option>
-                    <option value = "liter">liter</option>
-                    <option value = "msk">msk</option>
-                    <option value = "krdm">krdm</option>
-                    <option value = "cl">cl</option>
-                    <option value = "g">g</option>
-                    <option value = "kg">kg</option>
-                    <option value = "st">st</option>
-                </select>
-                <input type="text" id="ingredient" placeholder="Ingredient">
-                <button type="button" id="addIngredient">Add Ingredient</button>
-                <h3>Tags:</h3>
+                <input type = "text" class = "recipeTitle" placeholder = "Name of Dish">
+                <button type="button" id="addIngredientBtn">Add Ingredient</button>
+                <h3>Categories:</h3>
                 <div id = "tags">
                     <input type="checkbox" name="vegetarian" value="Vegetarian">Vegetarian
                     <input type="checkbox" name="gluten" value="Gluten-free">Gluten-free
@@ -68,10 +54,16 @@
                     <input type="checkbox" name="main" value="Main Course">Main Course
                     <input type="checkbox" name="dessert" value="Dessert">Dessert
                 </div>
-                <textarea name = "Tillagning" type = "text" id ="instruction" placeholder="Tillagning" rows="10"></textarea>
-                <button type="submit" id="submitRecipe">Add Recipe</button>
+                <textarea name = "execution" type = "text" id ="instruction" placeholder="Execution" rows="10"></textarea>
+                <input type="button" value="Add Recipe" id="submitRecipeBtn"/>
             </form>
         </div>
     </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/JS/recipe.class.js"></script> 
+    <script src="/JS/RequestHandler.js"></script> 
+    <script src="/JS/WebHandler.js"></script> 
+    <script src="/JS/addRecipe.js"></script> 
 </body>
 </html>

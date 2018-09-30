@@ -126,7 +126,7 @@ nav ul li a{
     
 }
 
-button{
+button, #submitRecipeBtn{
     font-family: tasty-birds;
     text-decoration: none;
     font-size: 20px;
@@ -247,6 +247,20 @@ p{
     width: 200px;
 }
 
+#addRecipe{
+    width: 100%;
+}
+#ingredient{
+    display: flex;
+    flex-direction: row;
+}
+#ingredient input{
+    height: 30px;;
+}
+#ingredient select{
+    height: 30px;
+}
+
 .content > #recipe > img{
     border: 1px solid;
 
@@ -255,4 +269,9 @@ p{
     width: 30%;
     margin: 0px;
     padding: 0px;
+}
+
+.ui-autocomplete ui-menu {
+    background-color: inherit;
+    font-size: 15px;
 }

@@ -19,38 +19,45 @@
 			],
 		"_ingredients":[
 			{
-				"name": "pancetta",
-				"amount" : 100,
+				"id":1003,
+				"name": "Pig bacon",
+				"amount" : 25,
 				"unit" : "g"
 				},
 			{
-				"name": "pecorino cheese",
-				"amount" : 50,
+				"id": 77,
+				"name": "cheese",
+				"amount" : 12,
 				"unit" : "g"
 				},
 			{
+				"id": 103,
 				"name": "parmesan",
-				"amount" : 50,
+				"amount" : 12,
 				"unit" : "g"
 				},
 			{
+				"id": 1225,
 				"name" : "eggs",
-				"amount" : 3,
+				"amount" : 1,
 				"unit" : "st"
 				},
 			{
+				"id": 845,
 				"name" : "spaghetti",
-				"amount" : 350,
+				"amount" : 87,
 				"unit" : "g"
 				},
 			{
+				"id" : 371,
 				"name" : "garlic cloves",
-				"amount" : 2,
+				"amount" : 1,
 				"unit" : "st"
 			},
 			{
+				"id" : 29, 
 				"name" : "unsalted butter",
-				"amount" : 50,
+				"amount" : 12,
 				"unit" : "g"
 				}
 		],
@@ -72,54 +79,58 @@
 		],
 		"_ingredients" : [
 			{
-				"name" : "baby aubergines",
+				"id" : 372,
+				"name" : "aubergines",
 				"amount" : 600,
 				"unit" : "g"
 			},
 			{
+				"id" : 35,
 				"name" : "olive oil",
 				"amount" : 3,
 				"unit" : "msk"
 			},
 			{
+				"id" : 344,
 				"name" : "onion",
 				"amount" : 2,
 				"unit" : "st"
 			},
 			{
+				"id" : 371,
 				"name" : "garlic cloves",
 				"amount" : 2,
 				"unit" : "st"
 			},
 			{
+				"id" : 5973,
 				"name": "garam masala",
 				"amount": 1,
 				"unit" : "msk"
 			},
 			{
+				"id" : 291,
 				"name" : "tumeric",
 				"amount" : 1,
 				"unit" : "msk"
 			},
 			{
+				"id" : 377,
 				"name" : "ground coriander",
 				"amount" : 1,
 				"unit" : "msk"
 			},
 			{
+				"id" : 407,
 				"name" : "chopped tomatoes",
 				"amount" : 400,
 				"unit" : "ml"
 			},
 			{
+				"id" : 1590,
 				"name" : "coconut milk",
 				"amount" : 400,
 				"unit" : "ml"
-			},
-			{
-				"name" : "roughly chopped coriander",
-				"amount" : 0.5,
-				"unit" : "pkt"
 			}
 		],
 		"_categories":[
@@ -143,41 +154,76 @@
 		],
 		"_ingredients" :[
 			{
+				"id" : 1715,
 				"name" : "double cream",
 				"amount" : 568,
-				"unit" : "ml"
+				"unit" : "ml",
+				"nutritions":[{
+					"Namn": "Summa mättade fettsyror",
+					  "Varde": 25.63,
+					  "Enhet": "g"
+				},
+				{
+					"Namn": "Summa enkelomättade fettsyror",
+					  "Varde": "9,98",
+					  "Enhet": "g"
+				},
+				{
+					"Namn": "Summa fleromättade fettsyror",
+					"Varde": "0,95",
+					"Enhet": "g"
+				},
+				{
+					"Namn": "Energi (kcal)",
+					"Varde": "374",
+					"Enhet": "kcal"
+				},
+				{
+					"Namn": "Kolhydrater",
+          			"Varde": "3,00",
+          			"Enhet": "g"
+				},
+				{
+					"Namn": "Protein",
+					 "Varde": "2,11",
+					 "Enhet": "g"
+				},
+				{
+					"Namn": "Salt",
+          			"Varde": "0,06",
+          			"Enhet": "g"
+				}
+				]
 			},
 			{
+				"id" : 107,
 				"name" : "mascarpone",
 				"amount" : 250,
-				"unit" : "g"
+				"unit" : "g",
+				"nutritions" : [
+					
+				]
 			},
 			{
-				"name" : "marsala",
-				"amount" : 75,
-				"unit" : "ml"
-			},
-			{
-				"name" : "golden caster sugar",
-				"amount" : 5,
-				"unit" : "tsk"
-			},
-			{
+				"id" : 1957,
 				"name" : "strong coffee",
 				"amount" : 300,
 				"unit" : "ml"
 			},
 			{
+				"id" : 1678,
 				"name" : "sponge finger",
 				"amount" : 175,
 				"unit" : "g"
 			},
 			{
+				"id" : 2052,
 				"name" : "dark chocolate",
 				"amount" : 25,
 				"unit" : "g"
 			},
 			{
+				"id" : 1886,
 				"name" : "cocoa powder",
 				"amount" : 2,
 				"unit" : "msk"

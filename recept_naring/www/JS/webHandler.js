@@ -8,11 +8,11 @@ class WebHandler{
 
         for(let index in recipes){
 
-            let div = $(`<div id=${recipes[index]._id}></div>`);
+            let div = $(`<div id=${recipes[index].id}></div>`);
             let title = $(`<p></p>`);
-            let img = $(`<img src=${recipes[index]._imgUrl}>`);
+            let img = $(`<img src=${recipes[index].img}>`);
 
-            title.text(recipes[index]._title);
+            title.text(recipes[index].title);
             div.append(img);
             div.append(title);
         
@@ -20,34 +20,67 @@ class WebHandler{
         }
     }
 
-    static displayRecipeDetails(id){
+    static displayRecipeDetails(recipe, recommendedPortions){
         $('.content').empty();
-    
-        let recipe = RequestHandler.retrieveRecipe(id);
-        let recipe2 = new Recipe();
-
-        Object.assign(recipe2, recipe)
-
-        console.log(recipe2.title);
         
         let div = $(`<div id="recipe"></div>`);
         let title = $(`<h1></h1>`);
         let ingredientList = $(`<ul id="ingredients"></ul>`)
-        let img = $(`<img src=${recipe._imgUrl}>`)
+        let img = $(`<img src=${recipe.img}>`)
+        let dropDown = $(``)
 
-        for(let index in recipe._ingredients){
+        for(let index in recipe.ingredients){
             let ingredient = $(`<li></li>`);
-            let ingredientDetail = recipe._ingredients[index];
+            let ingredientDetail = recipe.ingredients[index];
             ingredient.text(ingredientDetail.amount + " " + ingredientDetail.unit + " " + ingredientDetail.name);
             ingredientList.append(ingredient);
         }
 
-        title.text(recipe._title);
+        title.text(recipe.title);
         div.append(title);
         div.append(img);
         div.append(ingredientList);
 
         $('.content').append(div);
+    }
 
+    static fetchIngredientSection(id){
+        let section = $(`<section id="${id}"></section`);
+        let inputAmount = $(`<input type="text" id = "amount" placeholder="Amount"></input>`);
+        let selectUnit = $(` <select type="text" id = "unit" placeholder = "Unit">
+                                <option value = "dl">dl</option>
+                                <option value = "ml">ml</option>
+                                <option value = "liter">liter</option>
+                                <option value = "msk">msk</option>
+                                <option value = "krdm">krdm</option>
+                                <option value = "cl">cl</option>
+                                <option value = "g">g</option>
+                                <option value = "kg">kg</option>
+                                <option value = "st">st</option>
+                            </select>`);
+        let inputIngredient = $(`<input type="text" id="ingredients" placeholder="Ingredient">`);
+        let inputUnitInGrams = $(`<input type="text" id="oneUnitInGrams" placeholder="One unit in grams">`)
+    
+        section.append(inputAmount);
+        section.append(selectUnit);
+        section.append(inputIngredient);
+        section.append(inputUnitInGrams);
+        return section;
+    }
+
+    static fetchRecipe(){
+        let recipe = new Recipe();
+
+        recipe.title = $('.recipeTitle').val();
+        console.log(recipe.title);
+
+
+
+
+
+
+
+
+        return recipe;
     }
 }
