@@ -64,13 +64,29 @@ class RequestHandler{
         return json;
     }
 
-    static retrieveIngredientList(){
+    static retrieveIngredientTitleList(){
         var json;
         var collectIngredient = (function () {
             $.ajax({
                 type : "GET",
                 async : false,
-                url: '/ingredients',
+                url: '/ingredientTitles',
+                dataType: "json",
+                success: function (data) {
+                    json = data;
+                }
+            });
+        })();
+        return json;
+    }
+
+    static retrieveIngredientIdsList(){
+        var json;
+        var collectIngredient = (function () {
+            $.ajax({
+                type : "GET",
+                async : false,
+                url: '/ingredientIds',
                 dataType: "json",
                 success: function (data) {
                     json = data;

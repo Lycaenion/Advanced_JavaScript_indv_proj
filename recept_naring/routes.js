@@ -101,39 +101,41 @@ module.exports =  class Routes{
             });
         })
         
-        this.app.get('/ingredients', (req, res)=>{
+        this.app.get('/ingredientTitles', (req, res)=>{
 
             fs.readFile('www/json/ingredients.json', 'utf8', function(err, data){
                 if(err) throw err;
 
-                let ingredientList = [];
+                let titleList = [];
                 let allIngredients = JSON.parse(data);
-                let substringUndefined = (req.query["substring"] === undefined);
 
-                if(substringUndefined){
-                    for(let index in allIngredients){
-                        ingredientList.push(allIngredients[index].Namn)
-                    } 
-                }else{
-                    for(let index in allIngredients){
-                        let substring = req.query["substring"].toUpperCase();
-                        let ingredientName = allIngredients[index].Namn.toUpperCase();
-                        if(ingredientName.indexOf(substring) > -1){
-
-                            ingredientList.push(allIngredients[index].Namn);
-                        }
-                    }
+                for(let index in allIngredients){
+                    titleList.push(allIngredients[index].Namn);  
                 }
-                res.send(ingredientList);
-            });
+                res.send(titleList);
+            }); 
+        });
+
+        this.app.get('/ingredientIds', (req, res)=>{
+
+            fs.readFile('www/json/ingredients.json', 'utf8', function(err, data){
+                if(err) throw err;
+
+                let idList = [];
+                let allIngredients = JSON.parse(data);
+
+                for(let index in allIngredients){
+                    idList.push(allIngredients[index].Nummer);  
+                }
+                res.send(idList);
+            }); 
         });
 
         this.app.post('/addRecipe', (req, res)=>{
             let data = fs.readFileSync('www/json/test.json');
             let recipes = JSON.parse(data);
-            console.log(recipes.length);
             req.body._id = recipes.length+1;
-            console.log(req.body);
+            req.body._imgUrl = '/img/no_uploaded.png';
             recipes.push(req.body);
             fs.writeFileSync('www/json/test.json', JSON.stringify(recipes));
             res.send("ok");

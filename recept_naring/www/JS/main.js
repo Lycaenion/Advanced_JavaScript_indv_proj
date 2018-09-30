@@ -26,11 +26,6 @@ $('.categories > li > a').on('click', function(e){
 function filterHandle(){
     let id = $(this).attr('id');
     selectedRecipe = RequestHandler.retrieveRecipe(id);
-
-    for(ingredientIndex in selectedRecipe.ingredients){
-        ingredientList.push(RequestHandler.retrieveIngredient(selectedRecipe.ingredients[ingredientIndex].id));
-    }
-    console.log(ingredientList);
     
     WebHandler.displayRecipeDetails(selectedRecipe, selectedRecipe.recommendedPortions);
 

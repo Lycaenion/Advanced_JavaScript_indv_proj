@@ -161,16 +161,9 @@ button, #submitRecipeBtn{
     flex-direction: column;
 }
 
-#recipeName, #amount, #ingredient{
-    width: 200px;
-}
 
 #recipeName{
     margin-bottom: 20px;
-}
-
-#unit{
-    width: 50px;
 }
 
 h3{
@@ -179,16 +172,12 @@ h3{
     width: 600px;
 }
 
-#tags{
+.categoryTags{
     border: 1px solid;
     padding-bottom: 20px;
     padding-top: 20px;
     width: 600px;
     margin-bottom: 20px;
-}
-
-#submitRecipe, #addIngredient{
-    width: 200px;
 }
 
 h1{
@@ -250,16 +239,7 @@ p{
 #addRecipe{
     width: 100%;
 }
-#ingredient{
-    display: flex;
-    flex-direction: row;
-}
-#ingredient input{
-    height: 30px;;
-}
-#ingredient select{
-    height: 30px;
-}
+
 
 .content > #recipe > img{
     border: 1px solid;

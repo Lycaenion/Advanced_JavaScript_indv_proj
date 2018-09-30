@@ -1,24 +1,23 @@
-var ingredientList;
+var ingredientTitleList = RequestHandler.retrieveIngredientTitleList();
+var ingredientIdList = RequestHandler.retrieveIngredientIdsList();
 let counter = 0;
 
-ingredientList = RequestHandler.retrieveIngredientList();
-
-$( "#ingredients" ).autocomplete({
-    source: ingredientList
-  });
 
 $('#addIngredientBtn').on('click', function(e){
     let section = WebHandler.fetchIngredientSection(counter+1);
     if(counter === 0){
-        $(`.recipeTitle`).after(section); 
+        $(`.recommendedPortions`).after(section); 
     }else{
         $(`#${counter}`).after(section);  
     };
     counter++; 
+    $(".ingredient").autocomplete({
+        source: ingredientTitleList
+      });
 });
 
 $('#submitRecipeBtn').on('click', function(e){
-    let recipe = WebHandler.fetchRecipe();
+    let recipe = WebHandler.fetchRecipe(ingredientIdList, ingredientTitleList);
     RequestHandler.addRecipe(recipe);
 });
 

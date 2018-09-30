@@ -30,3 +30,21 @@
             <button type="submit" id="submitRecipe">Lägg till</button>
         </form>
     </div>
+
+
+    let substringUndefined = (req.query["substring"] === undefined);
+
+                if(substringUndefined){
+                    for(let index in allIngredients){
+                        ingredientList.push(allIngredients[index].Namn)
+                    } 
+                }else{
+                    for(let index in allIngredients){
+                        let substring = req.query["substring"].toUpperCase();
+                        let ingredientName = allIngredients[index].Namn.toUpperCase();
+                        if(ingredientName.indexOf(substring) > -1){
+
+                            ingredientList.push(allIngredients[index].Namn);
+                        }
+                    }
+                }

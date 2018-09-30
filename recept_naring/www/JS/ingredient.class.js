@@ -1,0 +1,35 @@
+class Ingredient{
+
+    get amount(){
+        return this._amount;
+    }
+    get unit(){
+        return this._unit;
+    }
+    get name(){
+        return this._name;
+    }
+    get nutrition(){
+        return this._nutrition;
+    }
+    get oneUnitInGrams(){
+       return this._oneUnitInGrams;
+    }
+
+    set amount(value){
+       this._amount = value;
+    }
+    set unit(value){
+        this._unit = value;
+    }
+    set name(value){
+        this._name = value;
+    }
+    set nutrition(value){
+        this._nutrition = value;
+    }
+    set oneUnitInGrams(value){
+        this._oneUnitInGrams = value;
+    }
+
+}

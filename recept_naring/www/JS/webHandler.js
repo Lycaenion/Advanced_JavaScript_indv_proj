@@ -35,6 +35,7 @@ class WebHandler{
             ingredient.text(ingredientDetail.amount + " " + ingredientDetail.unit + " " + ingredientDetail.name);
             ingredientList.append(ingredient);
         }
+        recipe.getNutritionalValues();
 
         title.text(recipe.title);
         div.append(title);
@@ -46,8 +47,8 @@ class WebHandler{
 
     static fetchIngredientSection(id){
         let section = $(`<section id="${id}"></section`);
-        let inputAmount = $(`<input type="text" id = "amount" placeholder="Amount"></input>`);
-        let selectUnit = $(` <select type="text" id = "unit" placeholder = "Unit">
+        let inputAmount = $(`<input type="text" class = "amount" placeholder="Amount"></input>`);
+        let selectUnit = $(` <select type="text" class = "unit" placeholder = "Unit">
                                 <option value = "dl">dl</option>
                                 <option value = "ml">ml</option>
                                 <option value = "liter">liter</option>
@@ -58,27 +59,71 @@ class WebHandler{
                                 <option value = "kg">kg</option>
                                 <option value = "st">st</option>
                             </select>`);
-        let inputIngredient = $(`<input type="text" id="ingredients" placeholder="Ingredient">`);
-        let inputUnitInGrams = $(`<input type="text" id="oneUnitInGrams" placeholder="One unit in grams">`)
+        let inputIngredient = $(`<input type="text" class="ingredient" placeholder="Ingredient">`);
+        let inputUnitInGrams = $(`<input type="text" class="oneUnitInGrams" placeholder="One unit in grams">`)
     
         section.append(inputAmount);
         section.append(selectUnit);
         section.append(inputIngredient);
         section.append(inputUnitInGrams);
+        
         return section;
     }
 
-    static fetchRecipe(){
+    static fetchRecipe(ingredientIdList, ingredientTitleList){
         let recipe = new Recipe();
+        let listOfIngredients = [];
 
         recipe.title = $('.recipeTitle').val();
-        console.log(recipe.title);
+        recipe.recommendedPortions = $('.recommendedPortions').val();
+        recipe.execution = $('.execution').val().split('\n');
 
+        $('section').each(function(){
+            let ingredient = new Ingredient();
+            let indexOfName;
+            
+            ingredient.amount = $(this).children().eq(0).val();
+            ingredient.unit = $(this).children().eq(1).val();
+            ingredient.name = $(this).children().eq(2).val();
+            ingredient.oneUnitInGrams = $(this).children().eq(3).val()
+            for(let index in ingredientTitleList){
+                if(ingredient.name === ingredientTitleList[index]){
+                    indexOfName = index;
+                }
+            }
+            
+            let id = ingredientIdList[indexOfName];       
+            let ingredientInfo = RequestHandler.retrieveIngredient(id);
+            let nutritions = ingredientInfo.Naringsvarden.Naringsvarde;
+            let nutritionalValues = [];
+            
+            for(let index in nutritions){
+                if(nutritions[index].Namn === "Summa mättade fettsyror" ||
+                    nutritions[index].Namn === "Summa enkelomättade fettsyror" ||
+                    nutritions[index].Namn === "Summa fleromättade fettsyror" ||
+                    nutritions[index].Namn === "Energi (kcal)" ||
+                    nutritions[index].Namn === "Kolhydrater" || 
+                    nutritions[index].Namn === "Protein"||
+                    nutritions[index].Namn === "Salt"
+                ){
+                    nutritionalValues.push(nutritions[index]);
+                }
+            }
+            ingredient.nutrition = nutritionalValues;
 
+            listOfIngredients.push(ingredient);
 
+            
+        });
+        recipe.ingredients = listOfIngredients;
 
-
-
+        let categoryList = [];
+        let checkedCategories = $('input[type=checkbox]:checked');
+        checkedCategories.each(function(){
+            categoryList.push($(this).val());
+        });
+        recipe.categories = categoryList;
+        
 
 
         return recipe;
