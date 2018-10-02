@@ -20,29 +20,80 @@ class WebHandler{
         }
     }
 
-    static displayRecipeDetails(recipe, recommendedPortions){
-        $('.content').empty();
-        
-        let div = $(`<div id="recipe"></div>`);
+    static displayRecipeDetails(recipe, numberOfPortions){
+        $('.content').empty();        
+        let div = $(`<div id = "recipe"></div>`);
         let title = $(`<h1></h1>`);
-        let ingredientList = $(`<ul id="ingredients"></ul>`)
-        let img = $(`<img src=${recipe.img}>`)
-        let dropDown = $(``)
+        let ingredientList = $(`<ul id="ingredients"></ul>`);
+        let img = $(`<img src=${recipe.img}>`);
+        let execution = $(`<ol></ol>`);
+        let nutritionalValues = $(`<section class = "nutritionalValues"</section>`);
+        let listOfNutritions = [];
+        let nutrition = $(`<ul></ul>`);
+        
 
         for(let index in recipe.ingredients){
             let ingredient = $(`<li></li>`);
             let ingredientDetail = recipe.ingredients[index];
-            ingredient.text(ingredientDetail.amount + " " + ingredientDetail.unit + " " + ingredientDetail.name);
+            ingredient.text(ingredientDetail._amount/recipe.recommendedPortions*numberOfPortions + " " + ingredientDetail._unit + " " + ingredientDetail._name);
             ingredientList.append(ingredient);
         }
-        recipe.getNutritionalValues();
+
+        for(let index in recipe.execution){
+            let step = $(`<li></li>`);
+            step.text(recipe.execution[index]);
+            execution.append(step);
+        }
+
+        listOfNutritions = recipe.getNutritionalValues();
+
+        let proteinValue = $(`<li>Protein: ${listOfNutritions[0]/recipe.recommendedPortions*numberOfPortions}g </li>`);
+        let satFatValue = $(`<li>Saturated Fat: ${listOfNutritions[1]/recipe.recommendedPortions*numberOfPortions}g </li>`);
+        let polSatFatValue = $(`<li>Polyunsaturated Fat: ${listOfNutritions[2]/recipe.recommendedPortions*numberOfPortions}g</li>`);
+        let monSatFatValue = $(`<li>Monounsaturated Fat: ${listOfNutritions[3]/recipe.recommendedPortions*numberOfPortions}g</li>`);
+        let saltValue = $(`<li>Salt: ${listOfNutritions[4]/recipe.recommendedPortions*numberOfPortions}g</li>`);
+        let carbsValue = $(`<li>Carbohydrates: ${listOfNutritions[5]/recipe.recommendedPortions*numberOfPortions}g</li>`);
+        let kcalValue = $(`<li>kCal: ${listOfNutritions[6]/recipe.recommendedPortions*numberOfPortions}</li>`);
+        
+        nutrition.append(proteinValue);
+        nutrition.append(satFatValue);
+        nutrition.append(polSatFatValue);
+        nutrition.append(monSatFatValue);
+        nutrition.append(saltValue);
+        nutrition.append(carbsValue);
+        nutrition.append(kcalValue);
+
+        nutritionalValues.append(nutrition);
+
 
         title.text(recipe.title);
         div.append(title);
         div.append(img);
         div.append(ingredientList);
+        div.append(execution);
+        div.append(nutritionalValues);
 
         $('.content').append(div);
+    }
+
+    static appendDropDown(selectedOptionString){
+        let selectedOption = parseInt(selectedOptionString);
+        let html = `<label class = "changeNumberLabel">Number of portions:</label><select class = "selectedNumberOfPortions">
+        <option `+ (selectedOption === 1 ? "selected" : "") + ` value = "1">1</option>
+        <option `+ (selectedOption === 2 ? "selected" : "") + ` value = "2">2</option>
+        <option `+ (selectedOption === 3 ? "selected" : "") + ` value = "3">3</option>
+        <option ` + (selectedOption === 4 ? "selected" : "") + ` value = "4">4</option>
+        <option `+ (selectedOption === 5 ? "selected" : "") + ` value = "5">5</option>
+        <option `+ (selectedOption === 6 ? "selected" : "") + ` value = "6">6</option>
+        <option `+ (selectedOption === 8 ? "selected" : "") + ` value = "8">8</option>
+        <option `+ (selectedOption === 10 ? "selected" : "") + ` value = "10">10</option>
+        <option `+ (selectedOption === 12 ? "selected" : "") + ` value = "12">12</option>
+    </select>`;
+
+        console.log(html);
+
+        let numberOfPortions = $(html);
+        $('.content').before(numberOfPortions);
     }
 
     static fetchIngredientSection(id){
@@ -123,8 +174,8 @@ class WebHandler{
             categoryList.push($(this).val());
         });
         recipe.categories = categoryList;
-        
 
+        recipe.img = $('.imgUrl').val();
 
         return recipe;
     }

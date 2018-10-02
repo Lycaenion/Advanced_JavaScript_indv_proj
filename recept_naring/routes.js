@@ -132,12 +132,14 @@ module.exports =  class Routes{
         });
 
         this.app.post('/addRecipe', (req, res)=>{
-            let data = fs.readFileSync('www/json/test.json');
+            let data = fs.readFileSync('www/json/recipes.json');
             let recipes = JSON.parse(data);
             req.body._id = recipes.length+1;
-            req.body._imgUrl = '/img/no_uploaded.png';
+            if(req.body._imgUrl === ""){
+                req.body._imgUrl = '/img/no_uploaded.png';
+            };
             recipes.push(req.body);
-            fs.writeFileSync('www/json/test.json', JSON.stringify(recipes));
+            fs.writeFileSync('www/json/recipes.json', JSON.stringify(recipes));
             res.send("ok");
         });
     }

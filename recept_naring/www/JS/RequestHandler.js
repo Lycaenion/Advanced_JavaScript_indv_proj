@@ -98,7 +98,6 @@ class RequestHandler{
 
     static addRecipe(recipe){
         let recipeJson = JSON.stringify(recipe);
-        console.log("we are here");
         $.ajax({
             type: "POST",
             url: '/addRecipe',

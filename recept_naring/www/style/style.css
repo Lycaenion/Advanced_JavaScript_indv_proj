@@ -81,6 +81,7 @@ body{
 }
 
 nav{
+    z-index: 1;
     margin-left: 0px;
     background-color: 	#c9fdff;
     top: 0%;
@@ -161,7 +162,16 @@ button, #submitRecipeBtn{
     flex-direction: column;
 }
 
-
+.changeNumberLabel{
+    position: absolute;
+    top: 200px;
+    left: 700px;
+}
+.selectedNumberOfPortions{
+    position: absolute;
+    top: 200px;
+    left: 825px;
+}
 #recipeName{
     margin-bottom: 20px;
 }
@@ -231,6 +241,11 @@ p{
     width: 50%;
 }
 
+.content > #recipe > .nutritionalValues{
+    background: #c9fdff;
+    border: 1px solid;
+}
+
 .content > #recipe > ul{
     margin: 0px;
     width: 200px;
@@ -249,6 +264,7 @@ p{
     width: 30%;
     margin: 0px;
     padding: 0px;
+    margin-bottom: 25px;
 }
 
 .ui-autocomplete ui-menu {
