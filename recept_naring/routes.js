@@ -56,8 +56,9 @@ module.exports =  class Routes{
                         passesSubstring = true;
                     }else{
                         let title = recipe._title.toUpperCase();
+                        let description = recipe._description.toUpperCase();
                         let substring = req.query["substring"].toUpperCase();
-                        if(title.indexOf(substring) > -1){
+                        if(title.indexOf(substring) > -1 || description.indexOf(substring) > -1){
                             passesSubstring = true;
                         }
                     } 

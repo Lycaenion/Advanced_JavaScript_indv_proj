@@ -18,6 +18,9 @@ class Recipe{
     get categories(){
         return this._categories;
     }
+    get description(){
+        return this._description;
+    }
     get img(){
         return this._imgUrl;
     }
@@ -30,7 +33,6 @@ class Recipe{
         let sumOfSalt = 0;
         let sumOfkcal = 0;
         let sumOfCarbs = 0;
-        
 
         for(let index in this.ingredients){
             
@@ -70,7 +72,6 @@ class Recipe{
         nutritionalValues.push(sumOfSalt);
         nutritionalValues.push(sumOfCarbs);
         nutritionalValues.push(sumOfkcal);
-        console.log(nutritionalValues);
 
         return nutritionalValues; 
     }
@@ -92,6 +93,9 @@ class Recipe{
     }
     set categories(value){
         this._categories = value;
+    }
+    set description(value){
+        this._description = value;
     }
     set img(value){
         this._imgUrl = value;

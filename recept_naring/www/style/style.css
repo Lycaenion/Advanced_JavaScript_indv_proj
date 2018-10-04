@@ -76,7 +76,7 @@ body{
     padding-left: 30px;
     padding-right: 30px;
     background-color: #fff4f4;
-    border: 1px solid;
+    
 
 }
 
@@ -90,7 +90,7 @@ nav{
     height: 70px;
     font-size: 22px;
     font-weight: bold;
-    border: 1px solid;
+    
 }
 
 nav ul{
@@ -151,7 +151,7 @@ button, #submitRecipeBtn{
 }
 
 .searchForm {
-    border: 1px solid;
+    
     display: flex;
     align-items: center;
 }
@@ -177,13 +177,13 @@ button, #submitRecipeBtn{
 }
 
 h3{
-    border: 1px solid;
+    
     margin-bottom: 0px;
     width: 600px;
 }
 
 .categoryTags{
-    border: 1px solid;
+    
     padding-bottom: 20px;
     padding-top: 20px;
     width: 600px;
@@ -220,7 +220,7 @@ p{
 .content > div{
     background: #ffa7a7;
     margin: 25px;
-    border: 1px solid;
+    
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -243,7 +243,7 @@ p{
 
 .content > #recipe > .nutritionalValues{
     background: #c9fdff;
-    border: 1px solid;
+    
 }
 
 .content > #recipe > ul{
@@ -257,7 +257,7 @@ p{
 
 
 .content > #recipe > img{
-    border: 1px solid;
+    
 
     left: 900px;
     height: 30%;
@@ -267,7 +267,8 @@ p{
     margin-bottom: 25px;
 }
 
-.ui-autocomplete ui-menu {
-    background-color: inherit;
+.ui-autocomplete {
+    background-color: white;
     font-size: 15px;
+    width: 300px;
 }

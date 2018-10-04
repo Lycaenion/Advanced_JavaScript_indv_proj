@@ -35,7 +35,6 @@ function filterHandle(){
 
     WebHandler.appendDropDown(selectedRecipe.recommendedPortions);
     $('.selectedNumberOfPortions').change(function(e){
-        alert($(this).val());
         WebHandler.displayRecipeDetails(selectedRecipe, $(this).val());
     });
     

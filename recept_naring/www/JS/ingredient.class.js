@@ -9,6 +9,9 @@ class Ingredient{
     get name(){
         return this._name;
     }
+    get englishName(){
+        return this._englishName;
+    }
     get nutrition(){
         return this._nutrition;
     }
@@ -30,6 +33,10 @@ class Ingredient{
     }
     set oneUnitInGrams(value){
         this._oneUnitInGrams = value;
+    }
+
+    set englishName(value){
+        this._englishName = value;
     }
 
 }

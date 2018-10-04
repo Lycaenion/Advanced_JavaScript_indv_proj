@@ -24,18 +24,21 @@ class WebHandler{
         $('.content').empty();        
         let div = $(`<div id = "recipe"></div>`);
         let title = $(`<h1></h1>`);
+        let ingredientLabel = $(`<label>Ingredients:</label>`);
         let ingredientList = $(`<ul id="ingredients"></ul>`);
         let img = $(`<img src=${recipe.img}>`);
         let execution = $(`<ol></ol>`);
+        let nutritionLabel = $(`<label>Nutritional values:</label>`);
         let nutritionalValues = $(`<section class = "nutritionalValues"</section>`);
         let listOfNutritions = [];
         let nutrition = $(`<ul></ul>`);
-        
+        let descriptionLabel = $(`<label>Description:</label>`);
+        let description = $(`<div id="description"></div`);
 
         for(let index in recipe.ingredients){
             let ingredient = $(`<li></li>`);
             let ingredientDetail = recipe.ingredients[index];
-            ingredient.text(ingredientDetail._amount/recipe.recommendedPortions*numberOfPortions + " " + ingredientDetail._unit + " " + ingredientDetail._name);
+            ingredient.text(ingredientDetail._amount/recipe.recommendedPortions*numberOfPortions + " " + ingredientDetail._unit + " " + ingredientDetail._englishName);
             ingredientList.append(ingredient);
         }
 
@@ -47,14 +50,24 @@ class WebHandler{
 
         listOfNutritions = recipe.getNutritionalValues();
 
-        let proteinValue = $(`<li>Protein: ${listOfNutritions[0]/recipe.recommendedPortions*numberOfPortions}g </li>`);
-        let satFatValue = $(`<li>Saturated Fat: ${listOfNutritions[1]/recipe.recommendedPortions*numberOfPortions}g </li>`);
-        let polSatFatValue = $(`<li>Polyunsaturated Fat: ${listOfNutritions[2]/recipe.recommendedPortions*numberOfPortions}g</li>`);
-        let monSatFatValue = $(`<li>Monounsaturated Fat: ${listOfNutritions[3]/recipe.recommendedPortions*numberOfPortions}g</li>`);
-        let saltValue = $(`<li>Salt: ${listOfNutritions[4]/recipe.recommendedPortions*numberOfPortions}g</li>`);
-        let carbsValue = $(`<li>Carbohydrates: ${listOfNutritions[5]/recipe.recommendedPortions*numberOfPortions}g</li>`);
-        let kcalValue = $(`<li>kCal: ${listOfNutritions[6]/recipe.recommendedPortions*numberOfPortions}</li>`);
+        let polSat = listOfNutritions[2]/recipe.recommendedPortions*numberOfPortions;
+        let protein = listOfNutritions[0]/recipe.recommendedPortions*numberOfPortions;
+        let monSat = listOfNutritions[3]/recipe.recommendedPortions*numberOfPortions;
+        let satFat = listOfNutritions[1]/recipe.recommendedPortions*numberOfPortions;
+        let salt = listOfNutritions[4]/recipe.recommendedPortions*numberOfPortions;
+        let carbs = listOfNutritions[5]/recipe.recommendedPortions*numberOfPortions;
+        let kcal = listOfNutritions[6]/recipe.recommendedPortions*numberOfPortions;
         
+
+        let proteinValue = $(`<li>Protein: ${protein.toFixed(2)}g </li>`);
+        let satFatValue = $(`<li>Saturated Fat: ${satFat.toFixed(2)}g </li>`);
+        let polSatFatValue = $(`<li>Polyunsaturated Fat: ${polSat.toFixed(2)}g</li>`);
+        let monSatFatValue = $(`<li>Monounsaturated Fat: ${monSat.toFixed(2)}g</li>`);
+        let saltValue = $(`<li>Salt: ${salt.toFixed(2)}g</li>`);
+        let carbsValue = $(`<li>Carbohydrates: ${carbs.toFixed(2)}g</li>`);
+        let kcalValue = $(`<li>kCal: ${kcal.toFixed(2)}</li>`);
+        
+        nutritionalValues.append(nutritionLabel);
         nutrition.append(proteinValue);
         nutrition.append(satFatValue);
         nutrition.append(polSatFatValue);
@@ -65,10 +78,14 @@ class WebHandler{
 
         nutritionalValues.append(nutrition);
 
-
         title.text(recipe.title);
+        description.text(recipe.description);
+
         div.append(title);
         div.append(img);
+        div.append(descriptionLabel);
+        div.append(description);
+        div.append(ingredientLabel);
         div.append(ingredientList);
         div.append(execution);
         div.append(nutritionalValues);
@@ -90,8 +107,6 @@ class WebHandler{
         <option `+ (selectedOption === 12 ? "selected" : "") + ` value = "12">12</option>
     </select>`;
 
-        console.log(html);
-
         let numberOfPortions = $(html);
         $('.content').before(numberOfPortions);
     }
@@ -111,11 +126,13 @@ class WebHandler{
                                 <option value = "st">st</option>
                             </select>`);
         let inputIngredient = $(`<input type="text" class="ingredient" placeholder="Ingredient">`);
+        let ingredientName = $(`<input type="text" class="ingredientName" placeholder= "Ingredient name in English">`);
         let inputUnitInGrams = $(`<input type="text" class="oneUnitInGrams" placeholder="One unit in grams">`)
     
         section.append(inputAmount);
         section.append(selectUnit);
         section.append(inputIngredient);
+        section.append(ingredientName);
         section.append(inputUnitInGrams);
         
         return section;
@@ -136,7 +153,9 @@ class WebHandler{
             ingredient.amount = $(this).children().eq(0).val();
             ingredient.unit = $(this).children().eq(1).val();
             ingredient.name = $(this).children().eq(2).val();
-            ingredient.oneUnitInGrams = $(this).children().eq(3).val()
+            ingredient.englishName = $(this).children().eq(3).val();
+            console.log(ingredient.englishName);
+            ingredient.oneUnitInGrams = $(this).children().eq(4).val()
             for(let index in ingredientTitleList){
                 if(ingredient.name === ingredientTitleList[index]){
                     indexOfName = index;
@@ -161,10 +180,7 @@ class WebHandler{
                 }
             }
             ingredient.nutrition = nutritionalValues;
-
-            listOfIngredients.push(ingredient);
-
-            
+            listOfIngredients.push(ingredient);  
         });
         recipe.ingredients = listOfIngredients;
 
@@ -174,7 +190,7 @@ class WebHandler{
             categoryList.push($(this).val());
         });
         recipe.categories = categoryList;
-
+        recipe.description = $('.description').val();
         recipe.img = $('.imgUrl').val();
 
         return recipe;
