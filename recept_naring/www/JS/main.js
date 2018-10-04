@@ -1,50 +1,48 @@
-console.log("Hello");
+var selectedRecipe;
+var ingredientList = [];
 
 
-$( document ).ready(function() {
-    console.log( "ready!" );
+//search by substring
+$('#searchBtn').on('click', function(e){
+    $('.selectedNumberOfPortions').remove();
+    $('.changeNumberLabel').remove();
+    let substring =  $('#searchRecipe').val();
+    WebHandler.displayRecipes(undefined, substring);
+
+    $('.content > div').on('click', filterHandle);
+ });
+
+
+//display recipes based on category
+$('.categories > li > a').on('click', function(e){
+    $('.selectedNumberOfPortions').remove();
+    $('.changeNumberLabel').remove();
+    let category = $(this).attr('id');
+
+    if(category === 'allRecipes'){
+        WebHandler.displayRecipes(undefined, undefined);
+    }else{
+        WebHandler.displayRecipes(category, undefined);
+    }
+
+    $('.content > div').on('click', filterHandle);
+    
 });
 
-$.getJSON('/json/livsmedelsdata.json', start);
+function filterHandle(){
+    let id = $(this).attr('id');
+    selectedRecipe = RequestHandler.retrieveRecipe(id);
+
+    WebHandler.appendDropDown(selectedRecipe.recommendedPortions);
+    $('.selectedNumberOfPortions').change(function(e){
+        WebHandler.displayRecipeDetails(selectedRecipe, $(this).val());
+    });
+    
+    WebHandler.displayRecipeDetails(selectedRecipe, selectedRecipe.recommendedPortions);
+
+}
 
 
-function start(livsmedelsdata){
-    // Let jQuery create a document fragment
-    // consisting of ul element
-    let ul = $('<ul></ul>');
-    for(let livsmedel of livsmedelsdata){
-      // Create a li tag
-      let li = $('<li></li>');
-      // Add text inside the li element
-      li.text(livsmedel.Namn);
-      // Append the li tag to the ul element
-      ul.append(li);
-    }
-    // Append the ul tag to the body element 
-    $('body').append(ul);
-};
 
-/*
-$.getJSON('/json/people.json', start);
- 
-// Note: Below
-// when calling jQuery like this
-// $('ul') => grab all ul element in the DOM
-// But like this
-// $('<ul></ul>') => create a new ul element,
-// not added in the DOM yet
-function start(people){
-  // Let jQuery create a document fragment
-  // consisting of ul element
-  let ul = $('<ul></ul>');
-  for(let person of people){
-    // Create a li tag
-    let li = $('<li></li>');
-    // Add text inside the li element
-    li.text(person.name);
-    // Append the li tag to the ul element
-    ul.append(li);
-  }
-  // Append the ul tag to the body element 
-  $('body').append(ul);
-}*/
+
+

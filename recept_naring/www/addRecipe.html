@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
 </head>
 <body>
     <nav>
@@ -43,35 +45,38 @@
         <div id = "addRecipe">
             <h2>Add Recipe:</h2>
             <form id = "recipe">
-                <input type = "text" id = "recipeName" placeholder = "Name of Dish">
-                <input type="text" id = "amount" placeholder="Amount">
-                <select type="text" id = "unit" placeholder = "Unit">
-                    <option value = "dl">dl</option>
-                    <option value = "ml">ml</option>
-                    <option value = "liter">liter</option>
-                    <option value = "msk">msk</option>
-                    <option value = "krdm">krdm</option>
-                    <option value = "cl">cl</option>
-                    <option value = "g">g</option>
-                    <option value = "kg">kg</option>
-                    <option value = "st">st</option>
-                </select>
-                <input type="text" id="ingredient" placeholder="Ingredient">
-                <button type="button" id="addIngredient">Add Ingredient</button>
-                <h3>Tags:</h3>
-                <div id = "tags">
-                    <input type="checkbox" name="vegetarian" value="Vegetarian">Vegetarian
-                    <input type="checkbox" name="gluten" value="Gluten-free">Gluten-free
-                    <input type="checkbox" name="lactose" value="Lactose-free">Lactose-free
-                    <input type="checkbox" name="vegan" value="Vegan">Vegan
-                    <input type="checkbox" name="appetizer" value="Appetizer">Appetizer
-                    <input type="checkbox" name="main" value="Main Course">Main Course
-                    <input type="checkbox" name="dessert" value="Dessert">Dessert
+                <label>Title:</label>
+                <input type = "text" class = "recipeTitle">
+                <label>Recommended number of portions:</label>
+                <input type ="number" class = "recommendedPortions"> 
+                <button type="button" id="addIngredientBtn">Add Ingredient</button>
+                <h3>Categories:</h3>
+                <div class = "categoryTags">
+                    <input type="checkbox" name="vegetarian" value="vegetarian">Vegetarian
+                    <input type="checkbox" name="gluten" value="glutenFree">Gluten-free
+                    <input type="checkbox" name="lactose" value="lactoseFree">Lactose-free
+                    <input type="checkbox" name="vegan" value="vegan">Vegan
+                    <input type="checkbox" name="appetizer" value="appetizers">Appetizer
+                    <input type="checkbox" name="main" value="main">Main Course
+                    <input type="checkbox" name="dessert" value="dessert">Dessert
                 </div>
-                <textarea name = "Tillagning" type = "text" id ="instruction" placeholder="Tillagning" rows="10"></textarea>
-                <button type="submit" id="submitRecipe">Add Recipe</button>
+                <label>Description:</label>
+                <textarea name = "description" type = "text" class="description" row="10"></textarea>
+                <label>Execution:</label>
+                <textarea name = "execution" type = "text" class="execution" rows="10"></textarea>
+                <label>Add Image:</label>
+                <input type="text" class = "imgUrl">
+                <input type="button" value="Add Recipe" id="submitRecipeBtn"/>
             </form>
         </div>
     </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
+    <script src="/JS/ingredient.class.js"></script>
+    <script src="/JS/recipe.class.js"></script> 
+    <script src="/JS/RequestHandler.js"></script> 
+    <script src="/JS/WebHandler.js"></script> 
+    <script src="/JS/addRecipe.js"></script> 
 </body>
 </html>
