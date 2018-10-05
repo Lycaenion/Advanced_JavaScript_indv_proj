@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Titel</title>
-    <meta charset="utf-8">
-    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
+    <script src="/JS/main.js"></script>
   </head>
   <body>
-    <h1>Hej Då!</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Inspiration</a></li>
+        <li>Recept & Näring</li>
+        <li><form class = "searchForm">
+          <input id = "searchRecipe" type="search" placeholder="Search Recipe">
+          <button id="searchBtn" type="button">Search</button>
+        </form></li>
+      </ul>
+    </nav>
+    <div class = "leftMenu">
+        <ul class = "categories">
+            <li>Categories</li>
+            <li><a href="#" id="allRecipes"> - All Recipes</a></li>
+            <li><a href="#" id="lactoseFree"> - Lactose-free</a></li>
+            <li><a href="#" id="glutenFree"> - Gluten-free</a></li>
+            <li><a href="#" id="vegetarian"> - Vegetarian</a></li>
+            <li><a href="#" id="vegan"> - Vegan</a></li>
+            <li><a href="#" id="appetizers"> - Appetizers</a></li>
+            <li><a href="#" id="main"> - Main Courses</a></li>
+            <li><a href="#" id="dessert"> - Desserts</a></li> 
+        </ul>
+        <div class = "socialMedia">
+          <div><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></div>
+          <div><a href="https://www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></div>
+          <div><a href="https://www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></div>
+          <div><a href="https://www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></div>
+        </div>
+    </div>
+    <div class = "content">
+      <p>About us</p>
+    
+    </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/JS/recipe.class.js"></script> 
+    <script src="/JS/RequestHandler.js"></script> 
+    <script src="/JS/WebHandler.js"></script> 
+    <script src="/JS/main.js"></script> 
   </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style/style.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>Recept & Näring</li>
+        </ul>
+    </nav>
+    <div class = "leftMenu">
+        <div class = "socialMedia">
+            <div><a href="https://www.facebook.com/"><img id = "facebook" src="/img/facebook.svg"></a></div>
+            <div><a href="https://www.twitter.com"><img id = "twitter" src="/img/twitter.svg"></a></div>
+            <div><a href="https://www.instagram.com"><img id = "instagram" src ="img/instagram.svg"></a></div>
+            <div><a href="https://www.pintrest.com"><img id = "pintrest" src ="img/pintrest.svg"></a></div>
+        </div>
+    </div>
+    <div class = "content">
+        <div id = "addRecipe">
+            <h2>Add Recipe:</h2>
+            <form id = "recipe">
+                <label>Title:</label>
+                <input type = "text" class = "recipeTitle">
+                <label>Recommended number of portions:</label>
+                <input type ="number" class = "recommendedPortions"> 
+                <button type="button" id="addIngredientBtn">Add Ingredient</button>
+                <h3>Categories:</h3>
+                <div class = "categoryTags">
+                    <input type="checkbox" name="vegetarian" value="vegetarian">Vegetarian
+                    <input type="checkbox" name="gluten" value="glutenFree">Gluten-free
+                    <input type="checkbox" name="lactose" value="lactoseFree">Lactose-free
+                    <input type="checkbox" name="vegan" value="vegan">Vegan
+                    <input type="checkbox" name="appetizer" value="appetizers">Appetizer
+                    <input type="checkbox" name="main" value="main">Main Course
+                    <input type="checkbox" name="dessert" value="dessert">Dessert
+                </div>
+                <label>Description:</label>
+                <textarea name = "description" type = "text" class="description" row="10"></textarea>
+                <label>Execution:</label>
+                <textarea name = "execution" type = "text" class="execution" rows="10"></textarea>
+                <label>Add Image:</label>
+                <input type="text" class = "imgUrl">
+                <input type="button" value="Add Recipe" id="submitRecipeBtn"/>
+            </form>
+        </div>
+    </div> 
+
+    <script src="/JS/ingredient.class.js"></script>
+    <script src="/JS/recipe.class.js"></script> 
+    <script src="/JS/RequestHandler.js"></script> 
+    <script src="/JS/WebHandler.js"></script> 
+    <script src="/JS/addRecipe.js"></script> 
+    <script src="/JS/main.js"></script> 
+
+</body>
+</html>

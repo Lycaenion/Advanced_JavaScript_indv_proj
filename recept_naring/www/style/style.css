@@ -1,0 +1,277 @@
+@font-face{
+    font-family: "tasty-birds";
+    src:url("/fonts/tasty-birds/Tasty_Birds.otf");
+}
+
+@font-face{
+    font-family: "Bakery";
+    src:url("/fonts/bakery/bakery.ttf");
+}
+
+body{
+    margin: 0px;
+    font-family: tasty-birds;
+    
+}
+
+.categories{
+    list-style: none;
+    padding: 0px;
+    background-color: #ffcbcb;
+    margin: 0px;
+    width: 200px;
+    height: 100vh;  
+    position: fixed;
+    top: 70px;
+}
+
+.categories li{
+    padding: 10px;
+    border-bottom: 2px solid white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.categories li:not(:first-child):hover{
+    background-color: #ffa7a7;
+    font-style: italic;
+}
+
+.categories li a{
+    text-decoration: none;
+    color: black;
+}
+
+.socialMedia div a img{
+    width: 60px;
+    height: 60px;
+    padding: 20px 26px 20px 26px;
+    position: fixed;
+}
+
+.socialMedia div:first-child a img{
+    top: 500px;
+    left:0px;
+}
+
+.socialMedia div:nth-child(2) a img{
+    top:580px;
+    left: 0px;
+}
+
+.socialMedia div:nth-child(3) a img{
+    top: 500px;
+    left: 86px;
+} 
+
+.socialMedia div:nth-child(4) a img{
+    top: 580px;
+    left: 86px;
+}
+
+.content{
+    margin-left: 200px;
+    margin-top: 70px;
+    top: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #fff4f4;
+    
+
+}
+
+nav{
+    z-index: 1;
+    margin-left: 0px;
+    background-color: 	#c9fdff;
+    top: 0%;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+
+nav ul{
+
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    height: 70px;
+    padding: 0px;
+}
+
+nav ul li{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+nav ul li:nth-child(1){
+    margin-left: 220px;
+    margin-right: 35px;
+}
+
+
+nav ul li:nth-child(2){
+    margin-left: 0px;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+button, #submitRecipeBtn{
+    font-family: tasty-birds;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    border-radius: 0.12em;
+    padding: 0.35em 1.2em;
+    background-color: #ffa7a7;
+}
+
+#searchRecipe{
+    border: 1px solid;
+    font-size: 20px;
+    font-family: tasty-birds;
+    border: 3px solid #ffffff;
+    margin-right: 10px;
+    height: 40px;
+}
+
+.searchForm {
+    
+    display: flex;
+    align-items: center;
+}
+
+#recipe:not(select){
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.changeNumberLabel{
+    position: absolute;
+    top: 200px;
+    left: 700px;
+}
+.selectedNumberOfPortions{
+    position: absolute;
+    top: 200px;
+    left: 825px;
+}
+#recipeName{
+    margin-bottom: 20px;
+}
+
+h3{
+    
+    margin-bottom: 0px;
+    width: 600px;
+}
+
+.categoryTags{
+    
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+h1{
+    margin: 50px;
+}
+
+p{
+    font-size: 18px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content > div > img{
+    height: 50%;
+    width: 50%;
+    margin-top: 0px;
+    padding-left: 50px;
+}
+.content > div > p{
+    border: none;
+    margin: 0px;
+    padding-left: 55px;
+    padding-top: 20px;
+    border: 0px;
+}
+
+.content > div{
+    background: #ffa7a7;
+    margin: 25px;
+    
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.content > #recipe{
+    background:none;
+    border: none;
+    width: 100%;
+
+}
+
+.content > #recipe > h1{
+    float: left;
+    margin: 0px;
+    width: 50%;
+}
+
+.content > #recipe > .nutritionalValues{
+    background: #c9fdff;
+    
+}
+
+.content > #recipe > ul{
+    margin: 0px;
+    width: 200px;
+}
+
+#addRecipe{
+    width: 100%;
+}
+
+
+.content > #recipe > img{
+    
+
+    left: 900px;
+    height: 30%;
+    width: 30%;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 25px;
+}
+
+.ui-autocomplete {
+    background-color: white;
+    font-size: 15px;
+    width: 300px;
+}
+
+
+
