@@ -202,6 +202,7 @@ p{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .content > div > img{
     height: 50%;
@@ -220,7 +221,6 @@ p{
 .content > div{
     background: #ffa7a7;
     margin: 25px;
-    
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -255,10 +255,7 @@ p{
     width: 100%;
 }
 
-
 .content > #recipe > img{
-    
-
     left: 900px;
     height: 30%;
     width: 30%;
