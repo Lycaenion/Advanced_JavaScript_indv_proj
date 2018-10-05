@@ -14,11 +14,16 @@ $('#addIngredientBtn').on('click', function(e){
     $(".ingredient").autocomplete({
         source: ingredientTitleList
       });
+    $('.removeIngredient').on('click', function(e){
+        let sectionId = $(this).attr('id');
+        $('#recipe').remove(`#${sectionId}`);
+    })
 });
 
 $('#submitRecipeBtn').on('click', function(e){
     let recipe = WebHandler.fetchRecipe(ingredientIdList, ingredientTitleList);
     RequestHandler.addRecipe(recipe);
+    location.reload();
 });
 
 

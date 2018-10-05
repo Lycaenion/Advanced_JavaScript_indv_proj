@@ -10,24 +10,7 @@ app.use(express.static('www'));
 // Important: Tell the web server to accept
 // post and puts with a JSON body
 app.use(express.json({extended: false}));
-/*
-app.get('/recipes', (req, res)=>{
 
-    let obj;
-
-    fs.readFile('www/Json/recipes.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        let list = [];
-        obj = JSON.parse(data);
-
-        for(let o of obj){
-            list.push(o.categories);
-        }
-
-        res.send(list);
-    });
-   
-})*/
 let Routes = require('./routes.js');
 
 new Routes(app); 

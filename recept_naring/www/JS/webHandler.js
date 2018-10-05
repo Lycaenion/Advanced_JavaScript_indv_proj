@@ -28,7 +28,7 @@ class WebHandler{
         let ingredientList = $(`<ul id="ingredients"></ul>`);
         let img = $(`<img src=${recipe.img}>`);
         let execution = $(`<ol></ol>`);
-        let nutritionLabel = $(`<label>Nutritional values:</label>`);
+        let nutritionLabel = $(`<label>Nutritional values/portion:</label>`);
         let nutritionalValues = $(`<section class = "nutritionalValues"</section>`);
         let listOfNutritions = [];
         let nutrition = $(`<ul></ul>`);
@@ -50,13 +50,13 @@ class WebHandler{
 
         listOfNutritions = recipe.getNutritionalValues();
 
-        let polSat = listOfNutritions[2]/recipe.recommendedPortions*numberOfPortions;
-        let protein = listOfNutritions[0]/recipe.recommendedPortions*numberOfPortions;
-        let monSat = listOfNutritions[3]/recipe.recommendedPortions*numberOfPortions;
-        let satFat = listOfNutritions[1]/recipe.recommendedPortions*numberOfPortions;
-        let salt = listOfNutritions[4]/recipe.recommendedPortions*numberOfPortions;
-        let carbs = listOfNutritions[5]/recipe.recommendedPortions*numberOfPortions;
-        let kcal = listOfNutritions[6]/recipe.recommendedPortions*numberOfPortions;
+        let polSat = listOfNutritions[2]/recipe.recommendedPortions;
+        let protein = listOfNutritions[0]/recipe.recommendedPortions;
+        let monSat = listOfNutritions[3]/recipe.recommendedPortions;
+        let satFat = listOfNutritions[1]/recipe.recommendedPortions;
+        let salt = listOfNutritions[4]/recipe.recommendedPortions;
+        let carbs = listOfNutritions[5]/recipe.recommendedPortions;
+        let kcal = listOfNutritions[6]/recipe.recommendedPortions;
         
 
         let proteinValue = $(`<li>Protein: ${protein.toFixed(2)}g </li>`);
@@ -118,22 +118,22 @@ class WebHandler{
                                 <option value = "dl">dl</option>
                                 <option value = "ml">ml</option>
                                 <option value = "liter">liter</option>
-                                <option value = "msk">msk</option>
-                                <option value = "krdm">krdm</option>
+                                <option value = "tsp">tsp</option>
+                                <option value = "tbs">tbs</option>
                                 <option value = "cl">cl</option>
                                 <option value = "g">g</option>
                                 <option value = "kg">kg</option>
-                                <option value = "st">st</option>
+                                <option value = "pcs">pcs</option>
                             </select>`);
         let inputIngredient = $(`<input type="text" class="ingredient" placeholder="Ingredient">`);
         let ingredientName = $(`<input type="text" class="ingredientName" placeholder= "Ingredient name in English">`);
-        let inputUnitInGrams = $(`<input type="text" class="oneUnitInGrams" placeholder="One unit in grams">`)
+        let inputUnitInGrams = $(`<input type="text" class="oneUnitInGrams" placeholder="One unit in grams">`);
     
         section.append(inputAmount);
         section.append(selectUnit);
         section.append(inputIngredient);
         section.append(ingredientName);
-        section.append(inputUnitInGrams);
+        section.append(inputUnitInGrams);;
         
         return section;
     }

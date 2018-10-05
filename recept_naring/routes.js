@@ -7,6 +7,8 @@ module.exports =  class Routes{
 
     setRoutes(){
         const fs = require('fs');
+        var path = require('path');
+        var cookie = require('cookie')
 
         this.app.get('/categories', (req, res)=>{
             let obj;
